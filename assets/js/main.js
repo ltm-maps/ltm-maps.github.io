@@ -69,7 +69,7 @@ let mapA = L.map('mapA').setView([-2.59, 3.08], 8);
 let mapB = L.map('mapB').setView([46.522362, 6.635170], 16);
 
 var CartoDBLightB = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> | &copy; <a href="https://carto.com/attributions">CARTO</a> | &copy; <a href="https://www.epfl.ch/schools/cdh/lausanne-time-machine/">EPFL Lausanne Time Machine</a>',
 	subdomains: 'abcd',
 	minZoom: 14,
 	maxZoom: 20
@@ -97,6 +97,7 @@ var controlLayers = L.control.layers({}, {"Maquette": maquetteOverlay}).addTo(ma
 var geocoderControl;
 var geocoder = new L.Control.Geocoder.Nominatim();
 geocoderControl = L.Control.geocoder({geocoder: geocoder}).addTo(mapB);
+mapA.attributionControl.addAttribution('&copy; <a href="http://institutions.ville-geneve.ch/fr/bge/collections/cartes-et-plans/presentation/">Bibliothèque de Genève</a> | &copy; <a href="https://www.epfl.ch/schools/cdh/lausanne-time-machine/">EPFL Lausanne Time Machine</a>');
 
 var request_merian = initRequest('https://raw.githubusercontent.com/RPetitpierre/merian/main/assets/data/data_merian.json');
 request_merian.onload = function() {
@@ -166,10 +167,6 @@ request_melotte.onload = function() {
 	            fillOpacity: 0.4,
 	            opacity: 0.6
 	        };
-	    },
-	    onEachFeature: function (feature, layer) {
-	        // If you want to attach events or popups to the polygons:
-	        layer.bindPopup(feature.properties.name);
 	    }
 	})
 
