@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LTM Maps</title>
+    <title>Mapper Lausanne Time Machine</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width"/>
@@ -44,7 +44,7 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i class="fa fa-question-circle white"></i>&nbsp;&nbsp;Projet</a></li>
+            <li><a class="nav-link" href="https://www.epfl.ch/schools/cdh/lausanne-time-machine/" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i class="fa fa-question-circle white"></i>&nbsp;&nbsp;Projet</a></li>
             <li><a class="nav-link" href="https://hls-dhs-dss.ch/fr/articles/002408/2009-04-02/" target="_blank" data-toggle="collapse" data-target=".navbar-collapse.in" id="see-on"><i class="fa fa-globe-africa white"></i>&nbsp;&nbsp;Lire dans le DHS</a></li>
           </ul>
         </div><!--/.navbar-collapse -->
@@ -67,108 +67,6 @@
         </div>
       </div>
     </div>
-    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">À propos du projet JADIS</h4>
-          </div>
-          <div class="modal-body">
-            <ul class="nav nav-tabs" id="aboutTabs">
-              <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-bookmark"></i>&nbsp;À propos</a></li>
-              <li><a href="#faq" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;FAQ</a></li>
-              <li><a href="#download" data-toggle="tab"><i class="fa fa-cloud-download"></i>&nbsp;Télécharger</a></li>
-              <li><a href="#disclaimer" data-toggle="tab"><i class="fa fa-book"></i>&nbsp;License</a></li>
-            </ul>
-            <div class="tab-content" id="aboutTabsContent">
-              <div class="tab-pane fade active in" id="about">
-                <p>
-                  Le projet JADIS est issu d'une collaboration scientifique entre la Bibliothèque nationale de France (BnF) et l'Ecole Polytechnique Fédérale de Lausanne (EPFL). Les buts du projet sont les suivants: 
-                  <ol type="1">
-                  <li>Développer un algorithme permettant de <b>géolocaliser</b> et réaligner automatiquement les collections cartographiques avec une précision au niveau de la rue.</li>
-                  <li>Réaligner les résultats sur la base de données des <b>noms de rues</b> historiques pour permettre la fouille des cartes de Paris par les noms de rues d’époque. </li>
-                </ol>
-                </p>
-                <p>
-                  La part du projet visible en ligne correspond principalement au second objectif. L'essentiel du projet consiste cependant à développer un algorithme permettant de géolocaliser automatiquement les cartes, en faisant appel à des technologies avancées d'intelligence artificielle, telles que les réseaux de neurones. Ce développement s'inscrit dans le cadre de la <b>recherche expérimentale</b> en humanités digitales et géospatiales. Le programme développé est entièrement disponible en libre-accès (voir l'onglet Téléchargement).
-                </p>
-                <p>
-                  L'algorithme comprend deux axes principaux. Le premier vise à vectoriser automatiquement les cartes à l'aide d'un <b>réseau neuronal</b>. Le second vise à créer un réseau de similarité pour réaligner les cartes entre elles. Le tronc principal du programme permet ensuite d'identifier les <b>similarités géométriques</b> entre les cartes vectorisées pour déterminer la position des cartes les unes par rapport aux autres et également par rapport au tissu urbain actuel.
-                </p>
-                <p>
-                  Le visualiseur JADIS en ligne permet de replacer les cartes automatiquement géolocalisées sur une carte actuelle et de comparer ces dernières. À titre expérimental, les résultats de la <b>vectorisation</b> automatique ("Îlots vectorisés") et de l'extraction du <b>réseau viaire</b> ("Réseau viaire filaire") sont également superposables à la carte. L'estimation de la "Déformation de la carte" est également disponible, sous la forme d'une carte colorée, sur laquelle les zones sombres indiquent les zones probablement peu déformées. Les zones colorées s'étalent sur plusieurs nuances de rouge, de rose et de bleu, où les régions bleutées indiquent une <b>déformation verticale</b> (positive ou négative) et où les régions rouges indiquent une plus forte <b>déformation horizontale</b> (ibidem).
-                </p>
-              </div>
-              <div id="disclaimer" class="tab-pane fade">
-                <p><a href="https://creativecommons.org/licenses/by/2.0/" target="_blank">Creative Commons Attribution 2.0</a>.</p>
-              </div>
-              <div id="faq" class="tab-pane fade">
-                <p><b>Comment les cartes ont-elles été géolocalisées ?</b></p>
-                <p>Il n'y a pas d'intervention humaine dans le processus de géolocalisation des cartes. Un réseau de neurones ainsi qu'un algorithme de réalignement sont utilisés. De même, pour la segmentation des îlots et la vectorisation des rues, l'intelligence artificielle fonctionne sans intervention. La seule étape effectuée manuellement consiste à constituer le corpus de cartes présenté sur ce site. L'automatisation de cette étape longue et coûteuse nous a permis de vous proposer autant de données géoréférencée, mais elle explique également que certaines cartes peuvent être décalées, même lorsque le plan est géométriquement correct, car cette technologie est encore en développement.</p>
-                <p><b>Pourquoi les cartes historiques ne se superposent pas toujours à la carte actuelle ?</b></p>
-                <p>Outre l'automatisation de la géolocalisation (lire ci-dessus), les cartes anciennes sont très souvent déformées. La déformation résulte non seulement de l'usure de l'objet, mais peut également être causée par son conditionnement. Certaines cartes, par exemple, ont été découpées en plusieurs morceaux et collées sur un fond de toile. D'autre part, il faut retenir que jusqu'au début du XXème siècle, les cartes ne sont généralement pas basées sur une vue aérienne de la ville. Les imprécisions lors des relevés au sol sont très fréquentes. De même, la précision peut être également impactée par le processus de gravure et d'impression de la carte. Finalement, de nombreuses cartes du corpus sont stylisées. Les rues et les îlots peuvent ne pas être représentés de manière réaliste, par exemple pour des raisons de lisibilité. Des ellipses spatiales sont également souvent utilisées pour permettre de représenter sur le plan de ville des lieux périphériques plus éloignés.</p>
-                <p><b>Quel moteur de recherche permet de géoréférencer les noms de lieux ?</b></p>
-                <p>Le requêtage de deux bases de données permettent de retrouver les noms de lieux. Pour les données contemporaines, le moteur de recherche Nominatim d'OpenStreetMap est sollicité. Pour les rues et les lieux n'existant plus aujourd'hui, une recherche est effectuée dans la base de données des noms de rues issue du <a href="https://dev.clariah.nl/files/dh2019/boa/0878.html" target="_blank">projet Repopulating Paris</a> de l'Institut national d'Histoire de l'Art et de l'Ecole Polytechnique Fédérale de Lausanne. Ce projet a permis de géoréférencer plusieurs milliers de noms de rues, correspondant à plusieurs millions d'adresses.</p>
-                <p><b>Comment lire la couche de déformation des cartes ? À quoi correspond-elle ?</b></p>
-                <p>La couche de déformation des cartes est une estimation de la déformation des cartes par rapport à la géolocalisation calculée. Elle ne prend en compte que les déformations de moins de 250 pixels au niveau des points d'amer qui permettent de réaligner la carte ancienne sur la carte actuelle. Par assertion, la déformation est considérée nulle aux bords de la carte. Cela n'est évidemment pas toujours le cas, mais l'extension de la déformation jusqu'au bord de la carte ne serait pas plus correcte. Les régions sombres correspondent à un score d'alignement très élevé, tandis que les régions plus lumineuses correspondent à une déformation probablement plus importante. Les aires rouges indiquent à une déformation horizontale, tandis que les aires bleues signalent une déformation verticale. Les aires intermédiaires roses ou violettes indiquent une déformation à la fois verticale et horizontale.</p>
-                <p><b>À quoi correspond la notion de confiance ?</b></p>
-                <p>La confiance est une indication de la fiabilité de la géolocalisation. Elle prend notamment en compte le nombre d'amers utilisés pour géolocaliser la carte et la cohérence du résultat vis-à-vis de l'échelle et de l'angle de rotation de la carte. Trois catégories qualitatives sont utilisées sur le site pour rendre cet indice plus facilement utilisable : confiance acceptable, élevée, et très élevée. Les images qui n'ont pas obtenu un niveau de confiance acceptable n'ont évidemment pas été retenues pour le visualiseur.</p>
-              </div>
-              <div id="download" class="tab-pane fade">
-                <p>Les <b>données</b> utilisées par le site web, en particulier les couches d'information des cartes sont disponibles en libre-accès sur <a href="https://github.com/BnF-jadis/BnF-jadis.github.io" target="_blank">Github Pages</a>.</p>
-                <p>Les <b>images</b> de cartes sont téléchargeable gratuitement sur l'<a href="http://api.bnf.fr/api-iiif-de-recuperation-des-images-de-gallica" target="_blank">API IIIF de récupération des images de Gallica</a>.</p>
-                <p>Finalement, l'<b>algorithme</b> développé pour géolocaliser les cartes automatiquement et pour créer les couches d'information est disponible en libre-accès sur <a href="https://github.com/BnF-jadis" target="_blank">Github</a>.</p>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <div class="modal fade" id="featureModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title text-primary" id="feature-title"></h4>
-          </div>
-          <div class="modal-body" id="feature-info"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div class="modal fade" id="attributionModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">
-              <p>
-                <b>Attribution</b>
-              </p>
-              <p>
-                Site de la Bibliothèque nationale de France (BnF). 2020. <a href='https://creativecommons.org/licenses/by/2.0/' target="_blank">CC-BY 2.0</a>
-              </p>
-              <p>
-                Basé sur le site web de <a href='http://geohistoricaldata.org' target="_blank">GeoHistoricalData</a>. <a href='https://creativecommons.org/licenses/by/2.0/' target="_blank">CC-BY 2.0</a>. 
-              </p>
-              <p>
-                Fond de carte : contributeurs d'<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> et <a href="https://carto.com/attributions">CARTO</a>. 
-              </p>
-            </h4>
-          </div>
-          <div class="modal-body">
-            <div id="attribution"></div>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal --> 
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="assets/js/jquery.csv.js"></script>
